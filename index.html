@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Claude Portfolio</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CANIS — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+</head>
+<body>
+
+<!-- 滾動進度條 -->
+<div class="scroll-progress"></div>
+
+<!-- 粒子畫布 -->
+<canvas id="particles"></canvas>
+
+<!-- 自訂游標 -->
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+
+<!-- 導航 -->
+<nav id="nav">
+  <div class="logo">
+    <span class="logo-text">CANIS</span>
+    <span class="logo-dot">.</span>
+  </div>
+  <ul>
+    <li><a href="#about" data-text="關於我">關於我</a></li>
+    <li><a href="#projects" data-text="作品">作品</a></li>
+    <li><a href="#contact" data-text="聯絡">聯絡</a></li>
+  </ul>
+  <div class="nav-line"></div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-bg-text">PORTFOLIO</div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Creative Developer</p>
+    <h1 class="hero-title">
+      <span class="line-wrap"><span class="line">Portfolio</span></span>
+    </h1>
+    <p class="hero-sub">
+      <span class="typewriter" data-words='["Game Dev","3D Modeling","Web Design","Illustration"]'></span>
+    </p>
+    <a href="#projects" class="btn btn-hero">
+      <span>探索作品</span>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M8 2v12M2 8l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </a>
+  </div>
+  <div class="hero-scroll-hint">
+    <div class="scroll-line"></div>
+    <span>SCROLL</span>
+  </div>
+</section>
+
+<!-- 關於我 -->
+<section id="about" class="section reveal">
+  <div class="section-label">01 — ABOUT</div>
+  <h2 class="section-title">▎關於我<br><em>About Me</em></h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p class="about-p">
+        20歲，就讀<strong>嘉義大學</strong><br>數位學習設計與管理學系。
+      </p>
+      <p class="about-p">
+        從小對電腦和遊戲深感興趣，高一自主學習的機緣之下，踏入遊戲開發的世界。
+      </p>
+      <p class="about-p">
+        對我而言，創作是一種探索世界的方式——無論是一個角色、一個場景，都能成為傳遞故事與情感的媒介。
+      </p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-tag reveal-tag" style="--i:0">Game Dev</div>
+      <div class="skill-tag reveal-tag" style="--i:1">3D Modeling</div>
+      <div class="skill-tag reveal-tag" style="--i:2">Illustration</div>
+      <div class="skill-tag reveal-tag" style="--i:3">Web Design</div>
+      <div class="skill-tag reveal-tag" style="--i:4">Blender</div>
+      <div class="skill-tag reveal-tag" style="--i:5">Unity</div>
+      <div class="skill-tag reveal-tag" style="--i:6">Unreal Engine</div>
+      <div class="skill-tag reveal-tag" style="--i:7">Clip Studio Paint</div>
+    </div>
+  </div>
+</section>
+
+<!-- 作品 -->
+<section id="projects" class="section">
+  <div class="section-label">02 — WORKS</div>
+  <h2 class="section-title reveal">▎作品<br><em>Artworks</em></h2>
+  <div class="project-grid">
+
+    <div class="card tilt-card reveal-card" style="--delay:0s"
+      data-title="3D 建模" data-desc="Minecraft 材質：像素 3D / 3D動態 武器建模、2D GUI 設計，用於伺服器內材質。使用軟體：Block Bench、Cubik Studio、Aseprite。">
+      <div class="card-img" style="background-image:url('https://shibauu.gitbook.io/uu/~gitbook/image?url=https%3A%2F%2F268578399-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-Mfc2Pe3MjhcYknhIJjJ%252Fuploads%252FTrzEeSnXLCYldyu7z33c%252Fimage.png%3Falt%3Dmedia%26token%3Dc469acad-cb4b-4eea-9598-10eb8e30a8fa&width=768&dpr=3&quality=100&sign=568475de&sv=2')">
+        <div class="card-overlay"></div>
+        <div class="card-badge">MODEL</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">3D 建模 <span>3D Modeling</span></h3>
+        <p class="card-desc">Minecraft 材質 - 武器建模 · GUI 設計</p>
+        <div class="card-tools">Block Bench · Cubik Studio · Aseprite</div>
+        <div class="card-actions">
+          <a href="https://www.facebook.com/DEDMMICROCINEMA/" target="_blank" class="card-btn">前往網站 →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card tilt-card reveal-card" style="--delay:.08s"
+      data-title="3D 遊戲" data-desc="3D 射擊標靶遊戲，以 Unreal Engine 5.6 開發的完整第一人稱射擊體驗。">
+      <div class="card-img" style="background-image:url('https://cdn.discordapp.com/attachments/673039266615525376/1513174480212594758/image.png?ex=6a26c50d&is=6a25738d&hm=40eaece4bf08ccfb7334fef82d48cc9861f3327b7496576d99f9a68118121de0&')">
+        <div class="card-overlay"></div>
+        <div class="card-badge">GAME</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">3D 遊戲 <span>3D Games</span></h3>
+        <p class="card-desc">FPS 射擊標靶遊戲</p>
+        <div class="card-tools">Unreal Engine 5.6</div>
+        <div class="card-actions">
+          <a href="https://youtu.be/DFr279ASaUA" target="_blank" class="card-btn">遊玩影片 →</a>
+          <a href="https://www.threads.com/@kni.lups/post/DUSbhh6ktOi" target="_blank" class="card-btn card-btn-alt">開發過程</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card tilt-card reveal-card" style="--delay:.16s"
+      data-title="2D 遊戲" data-desc="橫向卷軸射擊遊戲（防疫小遊戲）及貪吃蛇小遊戲，以 Unity 開發。">
+      <div class="card-img" style="background-image:url('https://cdn.discordapp.com/attachments/673039266615525376/1513184026717061200/image.png?ex=6a26cdf1&is=6a257c71&hm=a19a6785c77ba1ad18c647ee8acaf860d140f0cbe910a24690e5ebd2918d7a8a&')">
+        <div class="card-overlay"></div>
+        <div class="card-badge">GAME</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">2D 遊戲 <span>2D Games</span></h3>
+        <p class="card-desc">橫向卷軸射擊遊戲 · 貪吃蛇</p>
+        <div class="card-tools">Unity</div>
+        <div class="card-actions">
+          <a href="https://youtu.be/IDEt5thEsD8" target="_blank" class="card-btn">遊玩影片 →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card tilt-card reveal-card" style="--delay:.24s"
+      data-title="程式設計" data-desc="資料庫網頁（書籍追蹤和閱讀筆記）、視窗程式設計（貪吃蛇 & 番茄鐘）。">
+      <div class="card-img" style="background-image:url('https://cdn.discordapp.com/attachments/673039266615525376/1513186828352622693/image.png?ex=6a26d08d&is=6a257f0d&hm=69107e72a16fbd9675402b5378b9979b0d8d8194ac42df1805d35d0f60f08b1a&')">
+        <div class="card-overlay"></div>
+        <div class="card-badge">CODE</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">程式設計 <span>Programming</span></h3>
+        <p class="card-desc">資料庫網頁 · 視窗程式設計</p>
+        <div class="card-tools"> HTML · CSS · JS</div>
+        <div class="card-actions">
+          <span class="card-btn card-btn-disabled">即將公開</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card tilt-card reveal-card" style="--delay:.32s"
+      data-title="3D 動畫" data-desc="咕咕鐘的建模與擺動設定，使用 Blender 完成完整的 3D 動畫製作流程。">
+      <div class="card-img" style="background-image:url('https://cdn.discordapp.com/attachments/673039266615525376/1513188924032417832/image.png?ex=6a26d281&is=6a258101&hm=f6580e7108731881eea311c63f352384f2aa0634cc2cd316847d05b19f554b5b&')">
+        <div class="card-overlay"></div>
+        <div class="card-badge">MODEL</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">3D 動畫 <span>3D Animation</span></h3>
+        <p class="card-desc">建模與擺動設定 - 咕咕鐘</p>
+        <div class="card-tools">Blender</div>
+        <div class="card-actions">
+          <a href="https://file.notion.so/f/f/61a3808e-b127-41fa-badc-b0f56cc15612/8ae4341f-7b7c-4b5d-9054-37d21e708ab0/blender%E5%92%95%E5%92%95%E9%90%98%E5%8B%95%E7%95%AB.mp4?table=block&id=3251380e-2465-80ff-bc2f-ee2e83e09855&spaceId=61a3808e-b127-41fa-badc-b0f56cc15612&expirationTimestamp=1780855200000&signature=Yz4H6o9zUC2z2ZW5a9bhR1F73gP0ZrKdSdNrgblJPCg" target="_blank" class="card-btn">動畫影片 →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card tilt-card reveal-card" style="--delay:.40s"
+      data-title="2D 動畫" data-desc="Tahoma 2D：車車大冒險 / Krita：功夫。探索不同 2D 動畫風格與技術。">
+      <div class="card-img" style="background-image:url('https://cdn.discordapp.com/attachments/673039266615525376/1513196206874955796/image.png?ex=6a26d949&is=6a2587c9&hm=0b901fba0a1b114e0d05a7af0359c90e44441107b8b1afabcc163b4d0ca70973&')">
+        <div class="card-overlay"></div>
+        <div class="card-badge">ART</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">2D 動畫 <span>2D Animation</span></h3>
+        <p class="card-desc">車車大冒險 · 功夫</p>
+        <div class="card-tools">Tahoma 2D · Krita</div>
+        <div class="card-actions">
+          <a href="https://youtu.be/6FsIAzXhg3E" target="_blank" class="card-btn">動畫影片 →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card tilt-card reveal-card" style="--delay:.48s"
+      data-title="電腦繪圖" data-desc="使用 Clip Studio Paint 進行數位插畫創作，探索角色設計與場景繪製。">
+      <div class="card-img" style="background-image:url('https://cdn.discordapp.com/attachments/673039266615525376/1513200333311049858/Web.png?ex=6a26dd21&is=6a258ba1&hm=1a45e75f2dc2b33d810aab65d220cc54280ed54d0bba2c39b4c83936e246bab4&')">
+        <div class="card-overlay"></div>
+        <div class="card-badge">ART</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">電腦繪圖 <span>Digital Painting</span></h3>
+        <p class="card-desc">  </p>
+        <div class="card-tools">Clip Studio Paint</div>
+        <div class="card-actions">
+          <span class="card-btn card-btn-disabled">即將公開</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card tilt-card reveal-card" style="--delay:.56s"
+      data-title="手繪" data-desc="以紙筆進行傳統手繪創作，保留最純粹的繪圖溫度與線條質感。">
+      <div class="card-img" style="background-image:url('https://media.discordapp.net/attachments/673039266615525376/1513203115787030629/Web_2.png?ex=6a26dfb8&is=6a258e38&hm=18f8a5938ed22efcf067eccfa2045e57274096effc74165fb44e3555cf26a9ed&=&format=webp&quality=lossless&width=437&height=350')">
+        <div class="card-overlay"></div>
+        <div class="card-badge">ART</div>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">手繪 <span>Hand Drawing</span></h3>
+        <p class="card-desc">  </p>
+        <div class="card-tools">  </div>
+        <div class="card-actions">
+          <span class="card-btn card-btn-disabled">即將公開</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 聯絡 -->
+<section id="contact" class="section reveal">
+  <div class="section-label">03 — CONTACT</div>
+  <h2 class="section-title">▎聯絡方式<br><em>Contact Me</em></h2>
+  <div class="contact-grid">
+    <a href="mailto:pearl950215@gmail.com" class="contact-card reveal-card" style="--delay:0s">
+      <div class="contact-icon">✉</div>
+      <div class="contact-label">Email</div>
+      <div class="contact-value">pearl950215@gmail.com</div>
+    </a>
+    <a href="https://www.instagram.com/kni.lups" target="_blank" class="contact-card reveal-card" style="--delay:.1s">
+      <div class="contact-icon"><i class="fa fa-instagram" style="font-size:20px"></i></i></div>
+
+      <div class="contact-label">Instagram</div>
+      <div class="contact-value">@kni.lups</div>
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <span>© 2026 CANIS</span>
+  <span>Made with care ♡</span>
+</footer>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+  <div class="modal-backdrop"></div>
+  <div class="modal-content">
+    <button class="modal-close" aria-label="關閉">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M6 6l12 12M6 18L18 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <h2 id="modal-title"></h2>
+    <p id="modal-desc"></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
