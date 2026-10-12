@@ -225,17 +225,14 @@ document.querySelectorAll('.tilt-card').forEach(card => {
 const PROJECTS = {
   model: [
     { type: 'video', src: 'https://caniis.github.io/Portfolio/media/model-1.mp4', caption: '原創武器-仙源扇', wide: true, cover: true },
-    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/model-2.png', caption: '-' },
-    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/model-3.png', caption: 'GUI 設計' }
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/model-2.png', caption: '即刻槍戰-地獄火 Mk.0' },
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/model-3.png', caption: '背包 GUI 設計' }
   ],
   game3d: [
-    { type: 'video', src: 'https://caniis.github.io/Portfolio/media/fps-shoot.mp4', caption: '射擊手感', cover: true },
-    { type: 'video', src: 'https://caniis.github.io/Portfolio/media/fps-target.mp4', caption: '標靶機制' },
-    { type: 'youtube', id: 'DFr279ASaUA', caption: '完整遊玩影片', wide: true }
+    { type: 'youtube', id: 'DFr279ASaUA', caption: 'FPS 射擊標靶遊戲試玩影片', wide: true }
   ],
   game2d: [
-    { type: 'video', src: 'https://caniis.github.io/Portfolio/media/snake.mp4', caption: '貪吃蛇' },
-    { type: 'youtube', id: 'IDEt5thEsD8', caption: '完整遊玩影片', wide: true }
+    { type: 'youtube', id: 'IDEt5thEsD8', caption: '防疫小遊戲遊玩影片', wide: true }
   ],
   code: [],
   anim3d: [
