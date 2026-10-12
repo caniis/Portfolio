@@ -225,8 +225,8 @@ document.querySelectorAll('.tilt-card').forEach(card => {
 const PROJECTS = {
   model: [
     { type: 'video', src: 'https://caniis.github.io/Portfolio/media/model-turntable.mp4', caption: '武器模型旋轉展示', wide: true, cover: true },
-    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/model-gui.jpg', caption: 'GUI 設計' },
-    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/model-texture.jpg', caption: '材質繪製' }
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/model-gui.png', caption: 'GUI 設計' },
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/model-texture.png', caption: '材質繪製' }
   ],
   game3d: [
     { type: 'video', src: 'https://caniis.github.io/Portfolio/media/fps-shoot.mp4', caption: '射擊手感', cover: true },
@@ -241,8 +241,8 @@ const PROJECTS = {
   code: [],
   anim3d: [
     { type: 'video', src: 'https://caniis.github.io/Portfolio/media/anim3d-1.mp4', caption: '咕咕鐘擺動循環', wide: true, cover: true },
-    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/cuckoo-model.jpg', caption: '建模' },
-    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/cuckoo-rig.jpg', caption: '擺動設定' }
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/cuckoo-model.png', caption: '建模' },
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/cuckoo-rig.png', caption: '擺動設定' }
   ],
   anim2d: [
     { type: 'video', src: 'https://caniis.github.io/Portfolio/media/car-adventure.mp4', caption: '車車大冒險', cover: true },
@@ -250,20 +250,20 @@ const PROJECTS = {
     { type: 'youtube', id: '6FsIAzXhg3E', caption: '完整動畫', wide: true }
   ],
   paint: [
-    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/paint-1.jpg', caption: '電腦繪圖 01' },
-    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/paint-2.jpg', caption: '電腦繪圖 02' },
-    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/paint-3.jpg', caption: '電腦繪圖 03' },
-    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/paint-4.jpg', caption: '電腦繪圖 04' },
-    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/paint-5.jpg', caption: '電腦繪圖 05' },
-    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/paint-6.jpg', caption: '電腦繪圖 06' }
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/paint-1.png', caption: '電腦繪圖 01' },
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/paint-2.png', caption: '電腦繪圖 02' },
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/paint-3.png', caption: '電腦繪圖 03' },
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/paint-4.png', caption: '電腦繪圖 04' },
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/paint-5.png', caption: '電腦繪圖 05' },
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/paint-6.png', caption: '電腦繪圖 06' }
   ],
   draw: [
-    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/draw-1.jpg', caption: '手繪 01' },
-    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/draw-2.jpg', caption: '手繪 02' },
-    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/draw-3.jpg', caption: '手繪 03' },
-    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/draw-4.jpg', caption: '手繪 04' },
-    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/draw-5.jpg', caption: '手繪 05' },
-    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/draw-6.jpg', caption: '手繪 06' }
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/draw-1.png', caption: '手繪 01' },
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/draw-2.png', caption: '手繪 02' },
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/draw-3.png', caption: '手繪 03' },
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/draw-4.png', caption: '手繪 04' },
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/draw-5.png', caption: '手繪 05' },
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/draw-6.png', caption: '手繪 06' }
   ]
 };
 
