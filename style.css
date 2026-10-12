@@ -1,96 +1,116 @@
-/* =====================
-   CSS Variables — Morandi
-   ===================== */
-:root {
-  --bg:        #F3EFEA;
-  --bg2:       #E8E1D9;
-  --bg3:       #DDD6CE;
-  --primary:   #8C7B75;
-  --secondary: #A99E93;
-  --accent:    #B5A49A;
-  --text:      #4F4744;
-  --text-light:#8A7F7B;
-  --white:     #FDFAF7;
 
-  --ease: cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-out: cubic-bezier(0.0, 0, 0.2, 1);
+@keyframes blink {
+  0%, 100% { border-color: var(--accent); }
+  50% { border-color: transparent; }
+}
+
+@keyframes scrollDown {
+  0% { transform: scaleY(0); transform-origin: top; }
+  40% { transform: scaleY(1); transform-origin: top; }
+  60% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(.94) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 /* =====================
-   Reset
+   Reduced Motion
    ===================== */
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
-}
-
-body {
-  font-family: "Noto Sans TC", sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  overflow-x: hidden;
-  cursor: none;
-}
-
-a { color: inherit; text-decoration: none; }
-
-/* =====================
-   Scroll Progress Bar
-   ===================== */
-.scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 2px;
-  width: 0%;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
-  z-index: 9999;
-  transition: width .1s linear;
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .line, .hero-eyebrow, .hero-sub, .btn-hero, .hero-scroll-hint { opacity: 1; transform: none; }
 }
 
 /* =====================
-   Canvas Particles
+   Responsive
    ===================== */
-#particles {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media (max-width: 768px) {
+  nav { padding: 18px 6%; }
+  nav ul { gap: 24px; }
+  .hero { padding: 0 6%; }
+  .section { padding: 80px 6%; }
+  .project-grid { grid-template-columns: 1fr; }
+  .modal-scroll { padding: 40px 22px 32px; }
+  .modal-gallery { grid-template-columns: 1fr; }
+  .hero-bg-text { font-size: 28vw; opacity: .04; }
 }
 
 /* =====================
-   Custom Cursor
+   Portfolio refinement
    ===================== */
-.cursor {
-  width: 8px;
-  height: 8px;
+/* 首頁只保留 3D 建模的「前往網站」按鈕；其他連結在主題內頁顯示 */
+.card[data-id]:not([data-id="model"]) .card-actions {
+  display: none;
+}
+
+/* 內頁連結稍微提高辨識度 */
+.modal-links .card-btn {
+  padding: 10px 20px;
+  font-weight: 500;
   background: var(--primary);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  z-index: 99999;
-  transition: transform .1s var(--ease), background .2s;
+  color: var(--white);
+  border: 1px solid var(--primary);
+  box-shadow: 0 3px 10px rgba(79, 71, 68, .12);
+}
+.modal-links .card-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--white);
+  box-shadow: 0 6px 16px rgba(79, 71, 68, .18);
+}
+.modal-links .card-btn-alt {
+  background: var(--bg2);
+  color: var(--text);
+  border-color: var(--bg3);
+}
+.modal-links .card-btn-alt:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
 }
 
-.cursor-follower {
-  width: 32px;
-  height: 32px;
-  border: 1.5px solid var(--primary);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  z-index: 99998;
-  transition: transform .15s var(--ease), width .3s var(--ease), height .3s var(--ease), opacity .3s;
-  opacity: 0.6;
+/* 電腦繪圖與手繪：六格圖片展示 */
+.modal-gallery:has(.g-item:nth-child(6)):not(:has(.g-item.wide)) {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
-
-body:has(a:hover) .cursor-follower,
-body:has(.card:hover) .cursor-follower {
+.modal-gallery .g-item {
+  min-width: 0;
+}
+.modal-gallery .g-media {
+  aspect-ratio: 4 / 3;
+}
+.modal-gallery .g-item.wide .g-media {
+  aspect-ratio: 16 / 9;
+}
+.g-missing {
+  width: 100%;
+  height: 100%;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg2);
+  color: var(--text-light);
+  overflow-wrap: anywhere;
+}
+.g-missing b {
+  color: var(--text);
+}
+@media (max-width: 768px) {
+  .modal-gallery:has(.g-item:nth-child(6)):not(:has(.g-item.wide)) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
