@@ -882,3 +882,18 @@ nav a:hover::after { width: 100%; }
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* 六張繪圖依原圖比例顯示；保留 Grid 欄位邊界對齊 */
+.modal-gallery:has(.g-item:nth-child(6)):not(:has(.g-item.wide)) .g-media {
+  aspect-ratio: auto;
+  display: block;
+  background: transparent;
+}
+.modal-gallery:has(.g-item:nth-child(6)):not(:has(.g-item.wide)) .g-media img {
+  position: static;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background: transparent;
+}
