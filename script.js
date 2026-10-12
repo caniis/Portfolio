@@ -216,54 +216,54 @@ document.querySelectorAll('.tilt-card').forEach(card => {
    這裡只放「要展示的影片 / 圖片」。以 data-id 對應卡片。
 
    media 的 type：
-     video    本機短影片（靜音、自動循環）  src: 'media/xxx.mp4'
-     image    圖片 / GIF                    src: 'media/xxx.jpg'
+     video    本機短影片（靜音、自動循環）  src: 'https://caniis.github.io/Portfolio/media/xxx.mp4'
+     image    圖片 / GIF                    src: 'https://caniis.github.io/Portfolio/media/xxx.jpg'
      youtube  YouTube（靜音循環）           id : '影片ID'
    wide: true 代表佔滿整排；cover: true 代表用這支影片當卡片封面
    檔案還沒放進 media 資料夾時，會顯示提示框，不會出錯。
    ===================== */
 const PROJECTS = {
   model: [
-    { type: 'video', src: 'media/model-turntable.mp4', caption: '武器模型旋轉展示', wide: true, cover: true },
-    { type: 'image', src: 'media/model-gui.jpg', caption: 'GUI 設計' },
-    { type: 'image', src: 'media/model-texture.jpg', caption: '材質繪製' }
+    { type: 'video', src: 'https://caniis.github.io/Portfolio/media/model-turntable.mp4', caption: '武器模型旋轉展示', wide: true, cover: true },
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/model-gui.jpg', caption: 'GUI 設計' },
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/model-texture.jpg', caption: '材質繪製' }
   ],
   game3d: [
-    { type: 'video', src: 'media/fps-shoot.mp4', caption: '射擊手感', cover: true },
-    { type: 'video', src: 'media/fps-target.mp4', caption: '標靶機制' },
+    { type: 'video', src: 'https://caniis.github.io/Portfolio/media/fps-shoot.mp4', caption: '射擊手感', cover: true },
+    { type: 'video', src: 'https://caniis.github.io/Portfolio/media/fps-target.mp4', caption: '標靶機制' },
     { type: 'youtube', id: 'DFr279ASaUA', caption: '完整遊玩影片', wide: true }
   ],
   game2d: [
-    { type: 'video', src: 'media/shmup.mp4', caption: '橫向卷軸射擊', cover: true },
-    { type: 'video', src: 'media/snake.mp4', caption: '貪吃蛇' },
+    { type: 'video', src: 'https://caniis.github.io/Portfolio/media/shmup.mp4', caption: '橫向卷軸射擊', cover: true },
+    { type: 'video', src: 'https://caniis.github.io/Portfolio/media/snake.mp4', caption: '貪吃蛇' },
     { type: 'youtube', id: 'IDEt5thEsD8', caption: '完整遊玩影片', wide: true }
   ],
   code: [],
   anim3d: [
-    { type: 'video', src: 'media/cuckoo-loop.mp4', caption: '咕咕鐘擺動循環', wide: true, cover: true },
-    { type: 'image', src: 'media/cuckoo-model.jpg', caption: '建模' },
-    { type: 'image', src: 'media/cuckoo-rig.jpg', caption: '擺動設定' }
+    { type: 'video', src: 'https://caniis.github.io/Portfolio/media/cuckoo-loop.mp4', caption: '咕咕鐘擺動循環', wide: true, cover: true },
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/cuckoo-model.jpg', caption: '建模' },
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/cuckoo-rig.jpg', caption: '擺動設定' }
   ],
   anim2d: [
-    { type: 'video', src: 'media/car-adventure.mp4', caption: '車車大冒險', cover: true },
-    { type: 'video', src: 'media/kungfu.mp4', caption: '功夫' },
+    { type: 'video', src: 'https://caniis.github.io/Portfolio/media/car-adventure.mp4', caption: '車車大冒險', cover: true },
+    { type: 'video', src: 'https://caniis.github.io/Portfolio/media/kungfu.mp4', caption: '功夫' },
     { type: 'youtube', id: '6FsIAzXhg3E', caption: '完整動畫', wide: true }
   ],
   paint: [
-    { type: 'image', src: 'media/paint-1.jpg', caption: '電腦繪圖 01' },
-    { type: 'image', src: 'media/paint-2.jpg', caption: '電腦繪圖 02' },
-    { type: 'image', src: 'media/paint-3.jpg', caption: '電腦繪圖 03' },
-    { type: 'image', src: 'media/paint-4.jpg', caption: '電腦繪圖 04' },
-    { type: 'image', src: 'media/paint-5.jpg', caption: '電腦繪圖 05' },
-    { type: 'image', src: 'media/paint-6.jpg', caption: '電腦繪圖 06' }
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/paint-1.jpg', caption: '電腦繪圖 01' },
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/paint-2.jpg', caption: '電腦繪圖 02' },
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/paint-3.jpg', caption: '電腦繪圖 03' },
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/paint-4.jpg', caption: '電腦繪圖 04' },
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/paint-5.jpg', caption: '電腦繪圖 05' },
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/paint-6.jpg', caption: '電腦繪圖 06' }
   ],
   draw: [
-    { type: 'image', src: 'media/draw-1.jpg', caption: '手繪 01' },
-    { type: 'image', src: 'media/draw-2.jpg', caption: '手繪 02' },
-    { type: 'image', src: 'media/draw-3.jpg', caption: '手繪 03' },
-    { type: 'image', src: 'media/draw-4.jpg', caption: '手繪 04' },
-    { type: 'image', src: 'media/draw-5.jpg', caption: '手繪 05' },
-    { type: 'image', src: 'media/draw-6.jpg', caption: '手繪 06' }
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/draw-1.jpg', caption: '手繪 01' },
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/draw-2.jpg', caption: '手繪 02' },
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/draw-3.jpg', caption: '手繪 03' },
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/draw-4.jpg', caption: '手繪 04' },
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/draw-5.jpg', caption: '手繪 05' },
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/draw-6.jpg', caption: '手繪 06' }
   ]
 };
 
