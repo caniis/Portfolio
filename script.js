@@ -210,27 +210,207 @@ document.querySelectorAll('.tilt-card').forEach(card => {
 });
 
 /* =====================
-   Modal
-   ===================== */
-const modal = document.getElementById('modal');
-const modalTitle = document.getElementById('modal-title');
-const modalDesc  = document.getElementById('modal-desc');
-const modalClose = document.querySelector('.modal-close');
-const modalBackdrop = document.querySelector('.modal-backdrop');
+   作品資料（展示頁內容）
+   ---------------------
+   每個主題的標題、說明、工具、連結仍然讀取 index.html 的卡片；
+   這裡只放「要展示的影片 / 圖片」。以 data-id 對應卡片。
 
-document.querySelectorAll('.card[data-title]').forEach(card => {
-  card.addEventListener('click', () => {
-    modalTitle.textContent = card.dataset.title;
-    modalDesc.textContent  = card.dataset.desc;
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
+   media 的 type：
+     video    本機短影片（靜音、自動循環）  src: 'media/xxx.mp4'
+     image    圖片 / GIF                    src: 'media/xxx.jpg'
+     youtube  YouTube（靜音循環）           id : '影片ID'
+   wide: true 代表佔滿整排；cover: true 代表用這支影片當卡片封面
+   檔案還沒放進 media 資料夾時，會顯示提示框，不會出錯。
+   ===================== */
+const PROJECTS = {
+  model: [
+    { type: 'video', src: 'media/model-turntable.mp4', caption: '武器模型旋轉展示', wide: true, cover: true },
+    { type: 'image', src: 'media/model-gui.jpg', caption: 'GUI 設計' },
+    { type: 'image', src: 'media/model-texture.jpg', caption: '材質繪製' }
+  ],
+  game3d: [
+    { type: 'video', src: 'media/fps-shoot.mp4', caption: '射擊手感', cover: true },
+    { type: 'video', src: 'media/fps-target.mp4', caption: '標靶機制' },
+    { type: 'youtube', id: 'DFr279ASaUA', caption: '完整遊玩影片', wide: true }
+  ],
+  game2d: [
+    { type: 'video', src: 'media/shmup.mp4', caption: '橫向卷軸射擊', cover: true },
+    { type: 'video', src: 'media/snake.mp4', caption: '貪吃蛇' },
+    { type: 'youtube', id: 'IDEt5thEsD8', caption: '完整遊玩影片', wide: true }
+  ],
+  code: [],
+  anim3d: [
+    { type: 'video', src: 'media/cuckoo-loop.mp4', caption: '咕咕鐘擺動循環', wide: true, cover: true },
+    { type: 'image', src: 'media/cuckoo-model.jpg', caption: '建模' },
+    { type: 'image', src: 'media/cuckoo-rig.jpg', caption: '擺動設定' }
+  ],
+  anim2d: [
+    { type: 'video', src: 'media/car-adventure.mp4', caption: '車車大冒險', cover: true },
+    { type: 'video', src: 'media/kungfu.mp4', caption: '功夫' },
+    { type: 'youtube', id: '6FsIAzXhg3E', caption: '完整動畫', wide: true }
+  ],
+  paint: [
+    { type: 'image', src: 'media/paint-1.jpg', caption: '電腦繪圖 01' },
+    { type: 'image', src: 'media/paint-2.jpg', caption: '電腦繪圖 02' },
+    { type: 'image', src: 'media/paint-3.jpg', caption: '電腦繪圖 03' },
+    { type: 'image', src: 'media/paint-4.jpg', caption: '電腦繪圖 04' },
+    { type: 'image', src: 'media/paint-5.jpg', caption: '電腦繪圖 05' },
+    { type: 'image', src: 'media/paint-6.jpg', caption: '電腦繪圖 06' }
+  ],
+  draw: [
+    { type: 'image', src: 'media/draw-1.jpg', caption: '手繪 01' },
+    { type: 'image', src: 'media/draw-2.jpg', caption: '手繪 02' },
+    { type: 'image', src: 'media/draw-3.jpg', caption: '手繪 03' },
+    { type: 'image', src: 'media/draw-4.jpg', caption: '手繪 04' },
+    { type: 'image', src: 'media/draw-5.jpg', caption: '手繪 05' },
+    { type: 'image', src: 'media/draw-6.jpg', caption: '手繪 06' }
+  ]
+};
+
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* 影片只在畫面內播放，離開就暫停 */
+const videoObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting && !reduceMotion) e.target.play().catch(() => {});
+    else e.target.pause();
   });
+}, { threshold: 0.25 });
+
+function makeVideo(src) {
+  const v = document.createElement('video');
+  v.src = src;
+  v.muted = true;
+  v.loop = true;
+  v.playsInline = true;
+  v.setAttribute('muted', '');
+  v.setAttribute('playsinline', '');
+  v.preload = 'metadata';
+  if (reduceMotion) v.controls = true;
+  videoObserver.observe(v);
+  return v;
+}
+
+function missingBox(path) {
+  const d = document.createElement('div');
+  d.className = 'g-missing';
+  const title = document.createElement('b');
+  title.textContent = '圖片／影片尚未放入';
+  const note = document.createElement('span');
+  note.textContent = '請將檔案放到：' + path;
+  d.append(title, note);
+  return d;
+}
+
+/* 卡片封面：有 cover 影片就疊在原本圖片上循環播放 */
+document.querySelectorAll('.card[data-id]').forEach(card => {
+  const item = (PROJECTS[card.dataset.id] || []).find(m => m.cover && m.type === 'video');
+  if (!item) return;
+  const v = makeVideo(item.src);
+  v.addEventListener('error', () => v.remove());   // 檔案不存在就保留原本圖片
+  card.querySelector('.card-img').prepend(v);
 });
 
-function closeModal() {
-  modal.classList.remove('active');
-  document.body.style.overflow = '';
+/* 展示頁 */
+const modal = document.getElementById('modal');
+const modalScroll = document.getElementById('modal-scroll');
+const modalTitle = document.getElementById('modal-title');
+const modalDesc = document.getElementById('modal-desc');
+const modalTools = document.getElementById('modal-tools');
+const modalLinks = document.getElementById('modal-links');
+const modalGallery = document.getElementById('modal-gallery');
+const modalClose = document.querySelector('.modal-close');
+const modalBackdrop = document.querySelector('.modal-backdrop');
+let lastFocus = null;
+
+function buildItem(m) {
+  const fig = document.createElement('figure');
+  fig.className = 'g-item' + (m.wide ? ' wide' : '');
+  const box = document.createElement('div');
+  box.className = 'g-media';
+
+  if (m.type === 'video') {
+    const v = makeVideo(m.src);
+    v.preload = 'auto';
+    v.addEventListener('error', () => { v.remove(); box.appendChild(missingBox(m.src)); });
+    box.appendChild(v);
+    if (!reduceMotion) {
+      const tag = document.createElement('span');
+      tag.className = 'g-loop';
+      tag.textContent = 'LOOP';
+      box.appendChild(tag);
+    }
+  } else if (m.type === 'image') {
+    const img = document.createElement('img');
+    img.src = m.src;
+    img.alt = m.caption || '';
+    img.loading = 'lazy';
+    img.addEventListener('error', () => { img.remove(); box.appendChild(missingBox(m.src)); });
+    box.appendChild(img);
+  } else if (m.type === 'youtube') {
+    const f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + m.id + '?loop=1&playlist=' + m.id + '&rel=0&playsinline=1';
+    f.title = m.caption || 'YouTube 影片';
+    f.loading = 'lazy';
+    f.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.allowFullscreen = true;
+    box.appendChild(f);
+  }
+
+  fig.appendChild(box);
+  if (m.caption) {
+    const cap = document.createElement('figcaption');
+    cap.textContent = m.caption;
+    fig.appendChild(cap);
+  }
+  return fig;
 }
+
+function openModal(card) {
+  const items = PROJECTS[card.dataset.id] || [];
+  lastFocus = document.activeElement;
+
+  modalTitle.textContent = card.dataset.title;
+  modalDesc.textContent = card.dataset.desc;
+  modalTools.textContent = (card.querySelector('.card-tools')?.textContent || '').trim();
+
+  // 連結沿用卡片上的按鈕
+  modalLinks.innerHTML = '';
+  card.querySelectorAll('.card-actions > *').forEach(el => {
+    const href = el.getAttribute('href') || '';
+    const isYoutubeLink = /(?:youtube\.com|youtu\.be)/i.test(href);
+    const hasYoutubeEmbed = items.some(item => item.type === 'youtube');
+    if (isYoutubeLink && hasYoutubeEmbed) return;
+    if (el.classList.contains('card-btn-disabled')) return;
+    modalLinks.appendChild(el.cloneNode(true));
+  });
+
+  modalGallery.innerHTML = '';
+  modalScroll.querySelector('.modal-empty')?.remove();
+  if (items.length) {
+    items.forEach(m => modalGallery.appendChild(buildItem(m)));
+  }
+
+  modalScroll.scrollTop = 0;
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+  modalClose.focus();
+}
+
+function closeModal() {
+  if (!modal.classList.contains('active')) return;
+  modal.classList.remove('active');
+  modalGallery.innerHTML = '';     // 清空：影片與 iframe 一併停止
+  document.body.style.overflow = '';
+  lastFocus?.focus?.();
+}
+
+document.querySelectorAll('.card[data-title]').forEach(card => {
+  card.addEventListener('click', e => {
+    if (e.target.closest('a')) return;   // 點卡片上的連結就直接開連結
+    openModal(card);
+  });
+});
 
 modalClose.addEventListener('click', closeModal);
 modalBackdrop.addEventListener('click', closeModal);
