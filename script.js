@@ -240,6 +240,7 @@ const PROJECTS = {
   anim3d: [
     { type: 'video', src: 'https://caniis.github.io/Portfolio/media/anim3d-1.mp4', caption: '蝴蝶刀展示動畫', wide: true, cover: true },
     { type: 'video', src: 'https://caniis.github.io/Portfolio/media/anim3d-2.mp4', caption: '手槍換彈與開火動畫' },
+    { type: 'video', src: 'https://caniis.github.io/Portfolio/media/anim3d-3.mp4', caption: '紙袋貓動畫 (Grease Pencil)' },
     { type: 'video', src: 'https://caniis.github.io/Portfolio/media/anim3d-3.mp4', caption: '紙袋貓動畫 (Grease Pencil)' }
   ],
   anim2d: [
