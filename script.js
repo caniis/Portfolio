@@ -239,8 +239,8 @@ const PROJECTS = {
   ],
   anim3d: [
     { type: 'video', src: 'https://caniis.github.io/Portfolio/media/anim3d-1.mp4', caption: '蝴蝶刀展示動畫', wide: true, cover: true },
-    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/anim3d-2.mp4', caption: '手槍換彈與開火動畫' },
-    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/anim3d-3.mp4', caption: '紙袋貓動畫 (Grease Pencil)' }
+    { type: 'video', src: 'https://caniis.github.io/Portfolio/media/anim3d-2.mp4', caption: '手槍換彈與開火動畫' },
+    { type: 'video', src: 'https://caniis.github.io/Portfolio/media/anim3d-3.mp4', caption: '紙袋貓動畫 (Grease Pencil)' }
   ],
   anim2d: [
     { type: 'youtube', id: '6FsIAzXhg3E', caption: '車車大冒險', wide: true }
@@ -254,12 +254,12 @@ const PROJECTS = {
     { type: 'image', src: 'https://caniis.github.io/Portfolio/media/paint-6.png'}
   ],
   draw: [
-    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/draw-1.png', caption: '手繪 01' },
-    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/draw-2.png', caption: '手繪 02' },
-    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/draw-3.png', caption: '手繪 03' },
-    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/draw-4.png', caption: '手繪 04' },
-    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/draw-5.png', caption: '手繪 05' },
-    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/draw-6.png', caption: '手繪 06' }
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/draw-1.png'},
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/draw-2.png'},
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/draw-3.png'},
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/draw-4.png'},
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/draw-5.png'},
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/draw-6.png'}
   ]
 };
 
