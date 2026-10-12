@@ -240,7 +240,7 @@ const PROJECTS = {
   ],
   code: [],
   anim3d: [
-    { type: 'video', src: 'https://caniis.github.io/Portfolio/media/cuckoo-loop.mp4', caption: '咕咕鐘擺動循環', wide: true, cover: true },
+    { type: 'video', src: 'https://caniis.github.io/Portfolio/media/anim3d-1.mp4', caption: '咕咕鐘擺動循環', wide: true, cover: true },
     { type: 'image', src: 'https://caniis.github.io/Portfolio/media/cuckoo-model.jpg', caption: '建模' },
     { type: 'image', src: 'https://caniis.github.io/Portfolio/media/cuckoo-rig.jpg', caption: '擺動設定' }
   ],
