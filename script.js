@@ -224,9 +224,9 @@ document.querySelectorAll('.tilt-card').forEach(card => {
    ===================== */
 const PROJECTS = {
   model: [
-    { type: 'video', src: 'https://caniis.github.io/Portfolio/media/model-turntable.mp4', caption: '武器模型旋轉展示', wide: true, cover: true },
-    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/model-gui.png', caption: 'GUI 設計' },
-    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/model-texture.png', caption: '材質繪製' }
+    { type: 'video', src: 'https://caniis.github.io/Portfolio/media/model-1.mp4', caption: '原創武器-仙源扇', wide: true, cover: true },
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/model-2.png', caption: '-' },
+    { type: 'image', src: 'https://caniis.github.io/Portfolio/media/model-3.png', caption: 'GUI 設計' }
   ],
   game3d: [
     { type: 'video', src: 'https://caniis.github.io/Portfolio/media/fps-shoot.mp4', caption: '射擊手感', cover: true },
@@ -234,7 +234,6 @@ const PROJECTS = {
     { type: 'youtube', id: 'DFr279ASaUA', caption: '完整遊玩影片', wide: true }
   ],
   game2d: [
-    { type: 'video', src: 'https://caniis.github.io/Portfolio/media/shmup.mp4', caption: '橫向卷軸射擊', cover: true },
     { type: 'video', src: 'https://caniis.github.io/Portfolio/media/snake.mp4', caption: '貪吃蛇' },
     { type: 'youtube', id: 'IDEt5thEsD8', caption: '完整遊玩影片', wide: true }
   ],
